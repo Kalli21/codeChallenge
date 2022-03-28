@@ -13,6 +13,6 @@ export class TeamsService {
 
   getTeam(team:string,id:number){    
 
-    return this.http.get<TeamInterface>('/teams?conference=ACC');
+    return this.http.get('/teams?conference=ACC');
   }
 }

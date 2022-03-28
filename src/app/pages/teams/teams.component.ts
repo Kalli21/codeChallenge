@@ -13,8 +13,8 @@ export class TeamsComponent implements OnInit {
   
   conference:any;
   id:any;
-  team ?:TeamInterface;
-  teams :TeamInterface[]=[];
+  team: any;
+  teams :any[]=[];
 
   constructor(private service: TeamsService,
     private route:ActivatedRoute,
@@ -25,22 +25,34 @@ export class TeamsComponent implements OnInit {
     this.conference = this.route.snapshot.paramMap.get('home_conference');
     this.id = this.route.snapshot.paramMap.get('id');
     
-    this.service.getTeam(this.conference,this.id).subscribe((data:TeamInterface)=>{
+    this.service.getTeam(this.conference,this.id).subscribe((data:any)=>{
       // console.log(this.team);
       // this.team = data;
+      // console.log(data[0].id);
+      // this.teams.push(data);
 
-      this.teams.push(data[0]);
+      for (let i = 0; i < data.length; i++) {
+        console.log(data[i].id);
+        if(data[i].id==this.id){
+          console.log("aqui");
+          this.team = data[i];
+          
+        }
+      }
       
       // console.log(this.team);
       
-    })    
-    // console.log(this.teams);
-
-    this.teams.forEach(dat =>{
-      if(dat.id==this.id){
-        console.log(dat);
-      }
     });
+    console.log(this.team);    
+    // console.log("___________________")
+    // console.log(this.teams[0]);
+
+    // // this.teams.forEach(dat =>{
+    // //   // if(dat.id==this.id){
+    // //   console.log("-----------------------")  
+    // //   console.log(dat);
+    // //   // }
+    // // });
 
   }
 
