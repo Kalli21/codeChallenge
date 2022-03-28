@@ -1,0 +1,17 @@
+{
+    "/games*":{
+        "target": "https://api.collegefootballdata.com",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "*":{
+        "target": "https://api.collegefootballdata.com",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/teams*":{
+        "target": "https://api.collegefootballdata.com",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

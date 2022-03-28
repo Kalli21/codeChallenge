@@ -1,0 +1,32 @@
+export interface GameInterface {
+  id: number;
+  season: number;
+  week: number;
+  season_type: string;
+  start_date: string;
+  start_time_tbd?: any;
+  neutral_site: boolean;
+  conference_game?: any;
+  attendance?: any;
+  venue_id?: any;
+  venue?: any;
+  home_id: number;
+  home_team: string;
+  home_conference: string;
+  home_points: number;
+  home_line_scores: any[];
+  home_post_win_prob?: any;
+  home_pregame_elo?: any;
+  home_postgame_elo?: any;
+  away_id: number;
+  away_team: string;
+  away_conference?: any;
+  away_points: number;
+  away_line_scores: any[];
+  away_post_win_prob?: any;
+  away_pregame_elo?: any;
+  away_postgame_elo?: any;
+  excitement_index?: any;
+  highlights?: any;
+  notes?: any;
+}

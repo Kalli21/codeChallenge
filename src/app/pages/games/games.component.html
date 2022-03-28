@@ -1,0 +1,42 @@
+<mat-form-field appearance="fill">
+    <mat-label>Año</mat-label>
+    <input matInput [(ngModel)]="anio">
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Semana</mat-label>
+    <input matInput [(ngModel)]="semana">   
+</mat-form-field>
+<button mat-raised-button (click)="buscarGames()" color="primary">
+    <mat-icon color="white">search</mat-icon>    
+</button>
+<br>
+
+<mat-form-field [hidden]="!dataSource" style="padding-top: 10px;">
+    <input matInput (keyup)="aplicarFlitro($event)" placeholder="Filtro" autocomplete="off">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="home">
+        <th mat-header-cell *matHeaderCellDef> Home </th>
+        <td mat-cell  *matCellDef="let element"> 
+            <button  [routerLink]="['/teams', element.home_conference, element.home_id]" mat-button>{{element.home_team}}</button>
+            
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="visitors">
+        <th mat-header-cell *matHeaderCellDef> Visitors </th>
+        <td mat-cell *matCellDef="let element">
+            <button [routerLink]="['/teams', element.home_conference, element.away_id]" mat-button>{{element.away_team}}</button>
+        </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+</table>
+
+<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5,10,25,100]"></mat-paginator>
