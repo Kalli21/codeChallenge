@@ -20,6 +20,7 @@ import { InterceptorService } from './interceptors/interceptor.service';
 import { PlaysComponent } from './pages/plays/plays.component';
 import { GamesComponent } from './pages/games/games.component';
 import { MatTableModule} from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -45,7 +46,9 @@ import { MatTableModule} from '@angular/material/table';
     MatPaginatorModule,
     MatIconModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

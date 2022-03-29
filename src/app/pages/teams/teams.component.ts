@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { filter } from 'rxjs';
-import { TeamInterface } from 'src/app/Interfaces/team.interface';
 import { TeamsService } from 'src/app/services/teams.service';
 
 @Component({
@@ -13,8 +11,8 @@ export class TeamsComponent implements OnInit {
   
   conference:any;
   id:any;
-  team: any;
-  teams :any[]=[];
+  public team: any;
+  public teams :any=[];
 
   constructor(private service: TeamsService,
     private route:ActivatedRoute,
@@ -25,35 +23,19 @@ export class TeamsComponent implements OnInit {
     this.conference = this.route.snapshot.paramMap.get('home_conference');
     this.id = this.route.snapshot.paramMap.get('id');
     
-    this.service.getTeam(this.conference,this.id).subscribe((data:any)=>{
-      // console.log(this.team);
-      // this.team = data;
-      // console.log(data[0].id);
-      // this.teams.push(data);
+    
+    this.service.getTeam(this.conference).subscribe((data:any)=>{
 
       for (let i = 0; i < data.length; i++) {
         console.log(data[i].id);
         if(data[i].id==this.id){
-          console.log("aqui");
           this.team = data[i];
-          
+          break;
         }
       }
       
-      // console.log(this.team);
       
     });
-    console.log(this.team);    
-    // console.log("___________________")
-    // console.log(this.teams[0]);
-
-    // // this.teams.forEach(dat =>{
-    // //   // if(dat.id==this.id){
-    // //   console.log("-----------------------")  
-    // //   console.log(dat);
-    // //   // }
-    // // });
-
   }
 
 }

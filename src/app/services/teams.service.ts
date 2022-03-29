@@ -11,8 +11,12 @@ export class TeamsService {
 
   constructor(private http: HttpClient) { }
 
-  getTeam(team:string,id:number){    
+  getTeam(team:string){    
 
-    return this.http.get('/teams?conference=ACC');
+    return this.http.get('/teams?conference='+team);
+  }
+
+  getPlayer(){
+    return this.http.get('/roster?team=Florida%20State');
   }
 }

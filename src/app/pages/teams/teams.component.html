@@ -1,47 +1,23 @@
-<section >
-
-  <div class="ae-container-fluid">
-    <div class="ae-grid ae-grid--collapse rk-portfolio-info">
-      <div
-        class="ae-grid__item item-lg-8 item-sm--center au-xs-ta-center au-lg-ta-left"
-      >
-        <h2 class="rk-portfolio-inner-title">asdasd</h2>
-      </div>
-      <div
-        class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right rk-portfolio-details"
-      >
-        <p class="rk-portfolio-inner-client">
-          <span class="ae-lambda">Client: </span
-          ><span class="ae-u-bolder">Agency Design Studio</span>
-        </p>
-        <p class="au-underline rk-portfolio-inner-website">
-          <a href="#0" class="ae-kappa">www.agencydesign.com</a>
-        </p>
-        <p class="ae-kappa ae-u-bold rk-portfolio-inner-date">
-          12 August, 2015
-        </p>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div class="ae-grid ae-grid--collapse au-xs-ptp-1">
-      <div class="ae-grid__item item-lg-5 au-lg-ptp-1">
-        <h4 class="ae-u-bolder">333333</h4>
-        <p class="ae-eta">22222222</p>
-      </div>
-      <div class="ae-grid__item item-lg-6 item-lg--offset-1">
-        <!-- <img src="" /> -->
-      </div>
-    </div>
-    <div class="ae-grid ae-grid--collapse">
-      <div class="ae-grid__item item-lg-8">
-        
-      </div>
-      <div class="ae-grid__item item-lg-3 item-lg--offset-1 au-lg-ptp-1">
-        <p> x2x2</p>
-        <p class="ae-u-bolder">sub2</p>
-      </div>
-    </div>
-  </div>
-
-</section>
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image" style="background-image: '{{team.logos[0]}}'; background-size: cover;"></div>
+    <mat-card-title>{{team.school}}</mat-card-title>
+    <mat-card-subtitle>{{team.abbreviation}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src={{team.logos[0]}} alt="Photo of Logo">
+  <mat-card-content>
+    <p>
+      conference : {{team.conference}}
+    </p>
+    <p>
+      division: {{team.division}}
+    </p>
+    <p>
+      mascot: {{team.mascot}}
+    </p>    
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary">DETALLES</button>
+    <button mat-button color="primary">LOCALIZACIÓN</button>
+  </mat-card-actions>
+</mat-card>
