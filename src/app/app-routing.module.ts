@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: 'plays', component:PlaysComponent},
   {path: 'teams/:home_conference/:id', component:TeamsComponent},
   {path: 'games', component:GamesComponent},
-  {path: '**',pathMatch: 'full', redirectTo: 'teams'},
+  {path: '**',pathMatch: 'full', redirectTo: 'games'},
 ];
 
 @NgModule({

@@ -17,7 +17,9 @@
     </p>    
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button color="primary">DETALLES</button>
-    <button mat-button color="primary">LOCALIZACIÓN</button>
+    <button (click)="mostrar()" mat-button color="primary">DETALLES</button>
+    <!-- <button mat-button color="primary">LOCALIZACIÓN</button> -->
   </mat-card-actions>
 </mat-card>
+
+<app-players teamName="{{team.school}}" *ngIf="detalles== true"></app-players>

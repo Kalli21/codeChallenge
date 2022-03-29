@@ -21,6 +21,7 @@ import { PlaysComponent } from './pages/plays/plays.component';
 import { GamesComponent } from './pages/games/games.component';
 import { MatTableModule} from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
+import { PlayersComponent } from './pages/players/players.component';
 
 
 
@@ -31,7 +32,8 @@ import { MatButtonModule } from '@angular/material/button';
     FooterComponent,
     TeamsComponent,
     PlaysComponent,
-    GamesComponent
+    GamesComponent,
+    PlayersComponent
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,8 @@ export class TeamsService {
     return this.http.get('/teams?conference='+team);
   }
 
-  getPlayer(){
-    return this.http.get('/roster?team=Florida%20State');
+  getPlayer(teamName:string){
+    teamName = teamName.replace(' ','%20');
+    return this.http.get('/roster?team='+teamName);
   }
 }

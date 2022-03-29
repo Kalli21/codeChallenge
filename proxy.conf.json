@@ -14,7 +14,7 @@
         "secure": false,
         "changeOrigin": true
     },
-    "/  conferences*":{
+    "/conferences*":{
         "target": "https://api.collegefootballdata.com",
         "secure": false,
         "changeOrigin": true
