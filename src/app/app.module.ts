@@ -22,6 +22,7 @@ import { GamesComponent } from './pages/games/games.component';
 import { MatTableModule} from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { PlayersComponent } from './pages/players/players.component';
+import { LocationComponent } from './pages/location/location.component';
 
 
 
@@ -33,7 +34,8 @@ import { PlayersComponent } from './pages/players/players.component';
     TeamsComponent,
     PlaysComponent,
     GamesComponent,
-    PlayersComponent
+    PlayersComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { PlayersComponent } from './pages/players/players.component';
     MatButtonModule,
     MatCardModule
   ],
+  entryComponents: [LocationComponent],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorService,

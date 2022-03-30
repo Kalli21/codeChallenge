@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConferencesService } from 'src/app/services/conferences.service';
 import { TeamsService } from 'src/app/services/teams.service';
+import { MatDialog } from '@angular/material/dialog';
+import { LocationComponent } from '../location/location.component';
 
 @Component({
   selector: 'app-teams',
@@ -19,7 +21,8 @@ export class TeamsComponent implements OnInit {
 
   constructor(private service: TeamsService,
     private route:ActivatedRoute,
-    private confService:ConferencesService
+    private confService:ConferencesService,
+    private dialog: MatDialog
     ) { }
 
 
@@ -47,4 +50,14 @@ export class TeamsComponent implements OnInit {
     this.detalles = !this.detalles;
 
   }
+
+  mostrarLocation(latitud:number,longitud:number){
+    this.dialog.open(LocationComponent,{data:{
+      lat: latitud,
+      long: longitud
+    }});
+  }
+
+  
+
 }

@@ -18,7 +18,7 @@
   </mat-card-content>
   <mat-card-actions>
     <button (click)="mostrar()" mat-button color="primary">DETALLES</button>
-    <!-- <button mat-button color="primary">LOCALIZACIÓN</button> -->
+    <button (click)="mostrarLocation(team.location.latitude,team.location.longitude)"  mat-button color="primary">LOCALIZACIÓN</button>
   </mat-card-actions>
 </mat-card>
 
