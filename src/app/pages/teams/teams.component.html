@@ -1,25 +1,34 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image" style="background-image: '{{team.logos[0]}}'; background-size: cover;"></div>
-    <mat-card-title>{{team.school}}</mat-card-title>
-    <mat-card-subtitle>{{team.abbreviation}}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src={{team.logos[0]}} alt="Photo of Logo">
-  <mat-card-content>
-    <p>
-      conference : {{team.conference}}
-    </p>
-    <p>
-      division: {{team.division}}
-    </p>
-    <p>
-      mascot: {{team.mascot}}
-    </p>    
-  </mat-card-content>
-  <mat-card-actions>
-    <button (click)="mostrar()" mat-button color="primary">DETALLES</button>
-    <button (click)="mostrarLocation(team.location.latitude,team.location.longitude)"  mat-button color="primary">LOCALIZACIÓN</button>
-  </mat-card-actions>
-</mat-card>
+<mat-grid-list cols="2">  
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar  [ngStyle]="{'background-image': 'url(`{{team.logos[0]}}`)', 'background-size': 'cover'}"></div>
+        <mat-card-title>{{team.school}}</mat-card-title>
+        <mat-card-subtitle>{{team.abbreviation}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src={{team.logos[0]}} alt="Photo of Logo">
+      <mat-card-content>
+        <p>
+          conference : {{team.conference}}
+        </p>
+        <p>
+          division: {{team.division}}
+        </p>
+        <p>
+          mascot: {{team.mascot}}
+        </p>    
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="mostrar()" mat-button color="primary">DETALLES</button>
+        <button (click)="mostrarLocation(team.location.latitude,team.location.longitude)"  mat-button color="primary">LOCALIZACIÓN</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <app-players teamName="{{team.school}}" *ngIf="detalles== true"></app-players>
+  
+  </mat-grid-tile>
+</mat-grid-list>
 
-<app-players teamName="{{team.school}}" *ngIf="detalles== true"></app-players>
+
+

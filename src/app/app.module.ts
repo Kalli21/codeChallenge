@@ -23,8 +23,8 @@ import { MatTableModule} from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { PlayersComponent } from './pages/players/players.component';
 import { LocationComponent } from './pages/location/location.component';
-
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,9 @@ import { LocationComponent } from './pages/location/location.component';
     HttpClientModule,
     MatTableModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatDatepickerModule,
+    MatGridListModule
   ],
   entryComponents: [LocationComponent],
   providers: [{

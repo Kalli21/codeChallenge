@@ -15,7 +15,13 @@
     <input matInput (keyup)="aplicarFlitro($event)" placeholder="Filtro" autocomplete="off">
 </mat-form-field>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+
+    <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" [attr.colspan]="displayedColumns.length">
+          No hay coincidencias
+        </td>
+      </tr>
 
     <ng-container matColumnDef="home">
         <th mat-header-cell *matHeaderCellDef> Home </th>
@@ -39,4 +45,7 @@
 
 </table>
 
-<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5,10,25,100]"></mat-paginator>
+<div *ngIf="dataSource " >
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5,10,25,100]"></mat-paginator>
+</div>
+

@@ -13,12 +13,12 @@ import { GameInterface } from 'src/app/Interfaces/game.interface';
 })
 export class GamesComponent implements OnInit {
 
-  dataSource: any = [];
+  dataSource: any;
   displayedColumns:string[] = ['home','visitors'];
   anio:string='2000';
   semana:string='1';
 
-
+  
   @ViewChild(MatPaginator) paginator: MatPaginator | any;
 
   constructor(private service:GamesService,
@@ -26,7 +26,7 @@ export class GamesComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-
+    
     
   } 
 
@@ -50,7 +50,6 @@ export class GamesComponent implements OnInit {
     this.dataSource.filter = filtro.target.value.trim().toLowerCase();
   }
   
-   
 
 
 }
